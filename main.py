@@ -137,12 +137,15 @@ class MainWindow(QtGui.QMainWindow, main_page):
 			self.dump_table()
 			self.create_classes(self.search_term.text())
 			self.check_which_websites()
-			self.run_classes(parse_isohunt=self.parse_isohunt,
-							 parse_kickass=self.parse_kickass,
-							 parse_pirate=self.parse_pirate)
-			self.add_to_db(parse_pirate=self.parse_pirate,
-						   parse_kickass=self.parse_kickass,
-						   parse_isohunt=self.parse_isohunt)
+			self.run_classes(
+				parse_isohunt=self.parse_isohunt,
+				parse_kickass=self.parse_kickass,
+				parse_pirate=self.parse_pirate)
+				
+			self.add_to_db(
+				parse_pirate=self.parse_pirate,
+				parse_kickass=self.parse_kickass,
+				parse_isohunt=self.parse_isohunt)
 			self.populate_manager(self.page_num)
 			self.set_page_buttons_state(state=True)
 
@@ -169,19 +172,20 @@ class MainWindow(QtGui.QMainWindow, main_page):
 		self.isohunt.clear_data()
 
 		self.pirate.page_num, self.pirate.db_num = self.pirate.increase_page_num(
-													self.pirate.page_num, 
-													self.pirate.db_num, 
-													self.pirate.amount)
+			self.pirate.page_num, 
+			self.pirate.db_num, 
+			self.pirate.amount)
 
 		self.kickass.page_num, self.kickass.db_num = self.kickass.increase_page_num(
-													self.kickass.page_num, 
-													self.kickass.db_num, 
-													self.kickass.amount)
+			self.kickass.page_num, 
+			self.kickass.db_num, 
+			self.kickass.amount)
 
 		self.isohunt.page_num, self.isohunt.db_num = self.isohunt.increase_page_num(
-													self.isohunt.page_num, 
-													self.isohunt.db_num, 
-													self.isohunt.amount)
+			self.isohunt.page_num, 
+			self.isohunt.db_num, 
+			self.isohunt.amount)
+			
 		self.clear_manager(1)
 
 		if session.query(Torrents).filter_by(page_number=self.page_num).count() >= 1:
