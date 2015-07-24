@@ -219,22 +219,20 @@ class MainWindow(QtGui.QMainWindow, main_page):
 			self.page_num -= 1
 
 			self.pirate.page_num, self.pirate.db_num = self.pirate.decrease_page_num(
-														self.pirate.page_num,
-														self.pirate.db_num,
-														self.pirate.amount,
-														self.pirate.lowest_value)
-
+				self.pirate.page_num,
+				self.pirate.db_num,
+				self.pirate.amount,
+				self.pirate.lowest_value)
 			self.kickass.page_num, self.kickass.db_num = self.kickass.decrease_page_num(
-														self.kickass.page_num,
-														self.kickass.db_num,
-														self.kickass.amount,
-														self.kickass.lowest_value)
-
+				self.kickass.page_num,
+				self.kickass.db_num,
+				self.kickass.amount,
+				self.kickass.lowest_value)
 			self.isohunt.page_num, self.isohunt.db_num = self.isohunt.decrease_page_num(
-														self.isohunt.page_num,
-														self.isohunt.db_num,
-														self.isohunt.amount,
-														self.isohunt.lowest_value)
+				self.isohunt.page_num,
+				self.isohunt.db_num,
+				self.isohunt.amount,
+				self.isohunt.lowest_value)
 		self.clear_manager(1)
 		self.populate_manager(self.page_num)
 
