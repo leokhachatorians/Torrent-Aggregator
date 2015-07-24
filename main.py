@@ -6,7 +6,7 @@ import sys
 from db import session, Torrents
 from PyQt4 import QtCore, QtGui, uic
 
-main_page = uic.loadUiType("pages/main_page.ui")[0]
+main_page = uic.loadUiType("main_page.ui")[0]
 
 class MainWindow(QtGui.QMainWindow, main_page):
 	"""Defines and creates the main window"""
