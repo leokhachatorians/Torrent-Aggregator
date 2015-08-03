@@ -21,7 +21,14 @@ class Torrents(Base):
 	magnet_urls = Column(String(180))
 
 	def __repr__(self):
-		return "<Website(title={}, seeds={}, leech={}, info={}, website={}, magnet_link={}, page_number={}>".format(self.title, self.seeds, self.leech, self.info, self.website, self.magnet_link, self.page_number)
+		return "<Website(title={}, seeds={}, leech={}, info={}, website={}, magnet_link={}, page_number={}>".format(
+			self.title, 
+			self.seeds, 
+			self.leech, 
+			self.info, 
+			self.website, 
+			self.magnet_link, 
+			self.page_number)
 
 # Must call to close the session before dropping the table
 # Thus ensuring a clean DB after every time the app is loaded
