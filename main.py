@@ -127,6 +127,7 @@ class MainWindow(QtGui.QMainWindow, main_page):
 				selected are the sites which actually add data
 			7] Populate the manager and present it to the user
 		"""
+		self.check_which_websites()
 		if self.check_if_empty_string(self.search_term.text()):
 			QtGui.QMessageBox.warning(
 				self, "Invalid Entry", "Search Field Cannot Be Empty")
@@ -136,7 +137,6 @@ class MainWindow(QtGui.QMainWindow, main_page):
 		else:
 			self.dump_table()
 			self.create_classes(self.search_term.text())
-			self.check_which_websites()
 			self.run_classes(
 				parse_isohunt=self.parse_isohunt,
 				parse_kickass=self.parse_kickass,
